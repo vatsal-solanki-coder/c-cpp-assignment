@@ -1,15 +1,26 @@
 #include<stdio.h>
 void main()
 {
-    int numbers[5],i,smallest;
+    int number[5],i,j,k;
     for(i=0;i<5;i++)
     {
-        printf("\nEnter number[%d]::",i+1);
-        scanf("%d",&numbers[i]);
-        if(smallest>numbers[i])
+        printf("\nEnter number::");
+        scanf("%d",&number[i]);
+    }
+    for(i=0;i<5;i++)
+    {
+        for(j=i+1;j<5;j++)
         {
-            smallest=numbers[i];
+            if(number[i]>number[j])
+            {
+                k=number[i];
+                number[i]=number[j];
+                number[j]=k;
+            }
         }
     }
-    printf("\nSmallest number::%d",smallest);
+    for(i=0;i<5;i++)
+    {
+        printf("%d,",number[i]);
+    }
 }
